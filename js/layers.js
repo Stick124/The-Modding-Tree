@@ -16,7 +16,10 @@ addLayer("p", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         if (hasUpgrade('p', 12)) mult = mult.times(2)
-        softcap(player.p.points, new Decimal(300), 0)
+        if (mult.gte(player.p.softcap())) {
+            let getSCP = layers.p.softcap()
+            let softCapDivider = mult.log10().sub(getSCP.log10().sub(1)).pow(mult.log10().sub(getSCP.log10().sub(1)).div(250).plus(2))
+            mult = mult.div(softCapDivider); }
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
