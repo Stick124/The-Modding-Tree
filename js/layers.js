@@ -42,12 +42,19 @@ addLayer("p", {
 
         return softcappower2
     },
+    milestones: {
+        0: {
+            requirementDescription: "123 waffles",
+            effectDescription: "blah",
+            done() { return player.p.points.gte(1) }
+        }
+    },
     upgrades: {
         11: {
             title: "Send your red pikmin to collect pellets",
             description: "Double your pellet gain.",
             cost: new Decimal(0),
-            unlocked() {if (player.p.points.gte(1)) return true }
+            unlocked() {return true}
         },
         12: {
             title: "Pikmin overworking",
