@@ -44,8 +44,12 @@ function canGenPoints(){
 	function getPointGen() {
 		if (!canGenPoints())
 			return new Decimal(0)
+		if (player.p.points > player.points) 
+		{
+			let gain = new Decimal(1)
 
-		let gain = new Decimal(1)
+		} else {let gain =new Decimal(0)}
+		
 		
 		if (hasUpgrade('p', 11)) gain = gain.times(2)
 
