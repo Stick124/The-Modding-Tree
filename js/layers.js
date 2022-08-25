@@ -26,7 +26,7 @@ addLayer("p", {
         {key: "p", description: "P: Lose you pellets to grow red pikmin", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
-    softcap() {
+    hardcap() {
         //let softcap2 = new Decimal(800000)
         let softcap2 = new Decimal(300)
         if (hasUpgrade('q', 11)) softcap2 =softcap2.times(2)
@@ -138,7 +138,7 @@ addLayer("q", {
         {key: "q", description: "q:", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return player[this.layer].unlocked && hasUpgrade("p", 13)},
-    softcap() {
+    hardcap() {
         //let softcap2 = new Decimal(800000)
         let softcap3 = new Decimal(300)
         if (hasUpgrade('q', 11)) softcap3 =softcap3.times(2)
