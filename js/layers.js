@@ -29,7 +29,7 @@ addLayer("p", {
     softcap() {
         //let softcap2 = new Decimal(800000)
         let softcap2 = new Decimal(300)
-        if (hasUpgrade('q', 11)) softcap2 =softcap2.times(2)
+        
         return softcap2
     },
     softcapPower() {
@@ -141,7 +141,7 @@ addLayer("q", {
     softcap() {
         //let softcap2 = new Decimal(800000)
         let softcap2 = new Decimal(300)
-        if (hasUpgrade('q', 11)) softcap2 =softcap2.times(2)
+        
         return softcap2
     },
     softcapPower() {
