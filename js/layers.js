@@ -19,6 +19,8 @@ addLayer("p", {
         if (mult.gte(layer.p.softcap())) {
             let getSCP = layer.p.softcap()
             let softCapDivider = mult.log10().sub(getSCP.log10().sub(1)).pow(mult.log10().sub(getSCP.log10().sub(1)).div(250).plus(2))
+            if (softCapDivider.gte("e1e200")) {
+                softCapDivider = new Decimal("e1e200")}
             mult = mult.div(softCapDivider) }
         return mult
     },
