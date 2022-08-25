@@ -16,6 +16,7 @@ addLayer("p", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         if (hasUpgrade('p', 12)) mult = mult.times(2)
+        softcap(mult, new Decimal(300), 0)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -26,18 +27,7 @@ addLayer("p", {
         {key: "p", description: "P: Lose you pellets to grow red pikmin", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
-    hardcap() {
-        //let softcap2 = new Decimal(800000)
-        let softcap2 = new Decimal(300)
-        if (hasUpgrade('q', 11)) softcap2 =softcap2.times(2)
-        return softcap2
-    },
-    softcapPower() {
-        let softcappower2 = new Decimal(0.001)
 
-
-        return softcappower2
-    },
     milestones: {
         0: {
             requirementDescription: "your own name",
@@ -138,18 +128,7 @@ addLayer("q", {
         {key: "q", description: "q:", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return player[this.layer].unlocked && hasUpgrade("p", 13)},
-    hardcap() {
-        //let softcap2 = new Decimal(800000)
-        let softcap3 = new Decimal(300)
-        if (hasUpgrade('q', 11)) softcap3 =softcap3.times(2)
-        return softcap3
-    },
-    softcapPower() {
-        let softcappower3 = new Decimal(0.001)
-
-
-        return softcappower3
-    },
+    
     milestones: {
         3: {
             requirementDescription: "Greatings card",
