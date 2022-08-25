@@ -139,15 +139,15 @@ addLayer("q", {
     layerShown(){return player[this.layer].unlocked && hasUpgrade("x", 13)},
     softcap() {
         //let softcap2 = new Decimal(800000)
-        let softcap2 = new Decimal(300)
+        let softcap3 = new Decimal(300)
         
-        return softcap2
+        return softcap3
     },
     softcapPower() {
-        let softcappower2 = new Decimal(0)
+        let softcappower3 = new Decimal(0)
 
 
-        return softcappower2
+        return softcappower3
     },
     milestones: {
         0: {
