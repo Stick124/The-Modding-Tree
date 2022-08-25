@@ -55,6 +55,9 @@ addLayer("p", {
             title: "Send your red pikmin to collect pellets",
             description: "Double your pellet gain.",
             cost: new Decimal(0),
+            effect() {
+                return (player.p.points/(player.p.points-player.points)-1)/10
+            },
             unlocked() {return hasMilestone('p', 0)}
         },
         12: {

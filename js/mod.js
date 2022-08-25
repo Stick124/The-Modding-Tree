@@ -49,7 +49,7 @@ function canGenPoints(){
 
 		if (hasUpgrade('p', 11)) gain = new Decimal(1)
 
-		if (hasUpgrade('p', 11)) gain = gain.times((player.p.points/(player.p.points-player.points)-1)/10)
+		if (hasUpgrade('p', 11)) gain = gain.times(upgradeEffect("p", 11))
 
 		return gain
 	
