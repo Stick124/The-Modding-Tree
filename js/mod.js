@@ -47,29 +47,20 @@ function canGenPoints(){
 
 			let gain = new Decimal(1)
 
-		gain = gain.times(player.softcap)
-		if (hasUpgrade('p', 11)) gain = gain.add(player.softcapPower)
+		gain = gain.times((player.p.points/(player.p.points-player.points)-1)/10)
+		if (hasUpgrade('p', 11)) gain = gain.add()
 
 		return gain
 	
 	}
 
+	
+
 // Add formatting to the effect
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
 function addedPlayerData() { return {
 	
-	softcap() {
-        let softcap2 = new Decimal(player.p.points)
-		softcap2=softcap2.add(-1 * player.points)
-        
-        return softcap2
-    },
-    softcapPower() {
-        let softcappower2 = new Decimal(1)
 
-
-        return softcappower2
-    }
 
 }}
 
