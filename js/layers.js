@@ -135,9 +135,9 @@ addLayer("q", {
     },
     row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
-        {key: "q", description: "", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+        {key: "q", description: "q:", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return player[this.layer].unlocked && hasUpgrade("x", 13)},
+    layerShown(){return player[this.layer].unlocked && hasUpgrade("p", 13)},
     softcap() {
         //let softcap2 = new Decimal(800000)
         let softcap3 = new Decimal(300)
