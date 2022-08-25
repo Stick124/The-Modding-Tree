@@ -55,7 +55,7 @@ function canGenPoints(){
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
 function addedPlayerData() { return {
 	softcap() {
-        let softcap2 = new Decimal(player.p.points)
+        let softcap2 = new Decimal(player.p.points + 1)
 
         
         return softcap2
