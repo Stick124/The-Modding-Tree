@@ -173,6 +173,6 @@ addLayer("q", {
             description: "know twice as many people.",
             cost: new Decimal(1)
         }
-    },
+    }
 })
 
