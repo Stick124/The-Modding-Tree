@@ -62,7 +62,7 @@ addLayer("p", {
             cost: new Decimal(0),
             unlocked() {return hasMilestone('p', 0)},
             effect() {
-                return ((player.p.points-player.points)/(1+player.points))/10
+                return ((player.p.points-player.points)/(1+player.points))+.5
             }
         },
         12: {
