@@ -56,7 +56,7 @@ addLayer("p", {
             description: "Double your pellet gain.",
             cost: new Decimal(0),
             effect() {
-                return ((player.p.points-player.points)/player.p.points)/10+.5
+                return ((player.p.points-player.points)/player.p.points)+.5/10
             },
             unlocked() {return hasMilestone('p', 0)}
         },
