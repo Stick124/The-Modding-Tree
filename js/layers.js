@@ -63,17 +63,20 @@ addLayer("p", {
         12: {
             title: "Pikmin overworking",
             description: "Double your pellet gain again.",
-            cost: new Decimal(2)
+            cost: new Decimal(2),
+            unlocked() {return hasMilestone('p', 1)}
         },
         13: {
             title: "Send your pikmin to dangerous places.",
             description: "Guess what, double your pellet gain.",
-            cost: new Decimal(4)
+            cost: new Decimal(4),
+            unlocked() {return hasMilestone('p', 1)}
         },
         14: {
             title: "Send your red pikmin to the fire zone.",
             description: "This is different, but still boosts your pellet gain.",
             cost: new Decimal(9),
+            unlocked() {return hasMilestone('p', 1)},
             effect() {
                 return player[this.layer].points.add(4).pow(0.1)
             },
@@ -82,12 +85,14 @@ addLayer("p", {
         15: {
             title: "Send your red pikmin to the pellets actual location.",
             description: "This will triple your pellet gain... and maybe your IQ.",
-            cost: new Decimal(19)
+            cost: new Decimal(19),
+            unlocked() {return hasMilestone('p', 1)}
         },
         16: {
             title: "Send yourself to the fire zone.",
             description: "This is worth trying, but it's slightly more worrisome.",
             cost: new Decimal(200),
+            unlocked() {return hasMilestone('p', 1)},
             effect() {
                 return player[this.layer].points.add(4).pow(0.1)
             },
