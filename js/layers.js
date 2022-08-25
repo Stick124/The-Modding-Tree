@@ -8,8 +8,8 @@ addLayer("p", {
     }},
     color: "#4BDC13",
     requires: new Decimal(1), // Can be a function that takes requirement increases into account
-    resource: "Red Pikmin", // Name of prestige currency
-    baseResource: "pellets", // Name of resource prestige is based on
+    resource: "Signature", // Name of prestige currency
+    baseResource: "writing", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.5, // Prestige currency exponent
@@ -52,7 +52,7 @@ addLayer("p", {
     },
     upgrades: {
         11: {
-            title: "Send your red pikmin to collect pellets",
+            title: "trade your written names for a new signature",
             description: "Double your pellet gain.",
             cost: new Decimal(0),
             effect() {
