@@ -44,13 +44,10 @@ function canGenPoints(){
 	function getPointGen() {
 		if (!canGenPoints())
 			return new Decimal(0)
-		if (player.p.points >= player.points) 
-		{
+
 			let gain = new Decimal(1)
 
-		} else {let gain =new Decimal(0)}
-		
-		
+		gain = gain.times(softcap)
 		if (hasUpgrade('p', 11)) gain = gain.times(2)
 
 		return gain
@@ -63,7 +60,7 @@ function addedPlayerData() { return {
 	
 	softcap() {
         let softcap2 = new Decimal(player.p.points)
-
+		softcap2=softcap2.add(-1 * player.points)
         
         return softcap2
     },
