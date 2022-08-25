@@ -47,8 +47,7 @@ function canGenPoints(){
 
 			let gain = new Decimal(1)
 
-		gain = gain.times((player.p.points/(player.p.points-player.points)-1)/10)
-		if (hasUpgrade('p', 11)) gain = gain.add()
+		if (hasUpgrade('p', 11)) gain = gain.times((player.p.points/(player.p.points-player.points)-1)/10)
 
 		return gain
 	
