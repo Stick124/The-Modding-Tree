@@ -161,7 +161,7 @@ addLayer("q", {
             effectDescription: "Some extra word of mouth",
             done() { return player.p.points.gte(100) }
         },
-        10: {
+        20: {
             requirementDescription: "123 waffles",
             effectDescription: "blah",
             done() { return player.p.points.gte(100000) }
