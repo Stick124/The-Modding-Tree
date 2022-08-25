@@ -50,7 +50,7 @@ addLayer("p", {
             title: "Send your red pikmin to collect pellets",
             description: "Double your pellet gain.",
             cost: new Decimal(0),
-            unlocked() {return true}
+            unlocked() {return hasMilestone(p, 0)}
         },
         12: {
             title: "Pikmin overworking",
