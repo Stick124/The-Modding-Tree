@@ -47,7 +47,9 @@ addLayer("p", {
             title: "Send your red pikmin to collect pellets",
             description: "Double your pellet gain.",
             cost: new Decimal(0),
-            unlocked() {return player.p.points.gte(1)}
+            unlocked() {if (player.p.points.gte(1)) {
+                
+            } return true }
         },
         12: {
             title: "Pikmin overworking",
