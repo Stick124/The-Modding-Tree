@@ -33,7 +33,7 @@ addLayer("p", {
         return softcap2
     },
     softcapPower() {
-        let softcappower2 = new Decimal(0)
+        let softcappower2 = new Decimal(0.001)
 
 
         return softcappower2
@@ -145,7 +145,7 @@ addLayer("q", {
         return softcap3
     },
     softcapPower() {
-        let softcappower3 = new Decimal(0)
+        let softcappower3 = new Decimal(0.001)
 
 
         return softcappower3
