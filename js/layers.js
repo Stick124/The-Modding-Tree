@@ -16,7 +16,7 @@ addLayer("p", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         if (hasUpgrade('p', 12)) mult = mult.times(2)
-        softcap(mult, new Decimal(300), 0)
+        softcap(player.p.points, new Decimal(300), 0)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
