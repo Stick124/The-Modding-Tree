@@ -48,6 +48,8 @@ function canGenPoints(){
 		let gain = new Decimal(1)
 		
 		if (hasUpgrade('p', 11)) gain = gain.times(2)
+
+		return gain
 	
 	}
 
@@ -55,6 +57,18 @@ function canGenPoints(){
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
 function addedPlayerData() { return {
 	
+	softcap() {
+        let softcap2 = new Decimal(player.p.points)
+
+        
+        return softcap2
+    },
+    softcapPower() {
+        let softcappower2 = new Decimal(0)
+
+
+        return softcappower2
+    }
 
 }}
 
