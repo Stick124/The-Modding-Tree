@@ -140,12 +140,12 @@ addLayer("q", {
     layerShown(){return player[this.layer].unlocked && hasUpgrade("p", 13)},
     
     milestones: {
-        1: {
+        0: {
             requirementDescription: "Greatings card",
             effectDescription: "anything can be useful, when everything else was destroyed",
             done() { return player.q.points.gte(1) }
         },
-        2: {
+        1: {
             requirementDescription: "100 wavers",
             effectDescription: "Some extra word of mouth",
             done() { return player.q.points.gte(500) }
