@@ -27,11 +27,14 @@ addLayer("p", {
         {key: "p", description: "P: Lose you pellets to grow red pikmin", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return true},
-    softcap() {
-        //let softcap2 = new Decimal(800000)
-        let softcap2 = new Decimal(300)
-        if (hasUpgrade('q', 11)) softcap2 =softcap2.times(2)
-        return softcap2
+    effect() {
+        return {box:300
+        
+        }
+    },
+    effectDescription() { // Optional text to describe the effects
+        eff = this.effect();
+        return "which are boosting red pikmin by "+format(eff.box)
     },
     milestones: {
         0: {
