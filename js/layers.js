@@ -27,6 +27,8 @@ addLayer("f", {
     ],
     layerShown(){return player[this.layer].unlocked && hasUpgrade("q", 12)},
     
+    canReset() {false},
+
     passiveGeneration() {
         if (hasUpgrade('q', 12))
          return .1}
