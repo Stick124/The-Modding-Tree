@@ -148,12 +148,12 @@ addLayer("q", {
         4: {
             requirementDescription: "100 wavers",
             effectDescription: "Some extra word of mouth",
-            done() { return player.p.points.gte(500) }
+            done() { return player.q.points.gte(500) }
         },
         20: {
             requirementDescription: "123 waffles",
             effectDescription: "blah",
-            done() { return player.p.points.gte(100000) }
+            done() { return player.q.points.gte(100000) }
         }
     },
     upgrades: {
