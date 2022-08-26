@@ -5,6 +5,7 @@ addLayer("f", {
     startData() { return {
         unlocked: true,
 		points: new Decimal(0), // Starting amount
+        canReset() {false},
     }},
     color: "#FBCCFF",
     requires: new Decimal(100
