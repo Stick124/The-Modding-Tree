@@ -31,7 +31,8 @@ addLayer("p", {
         box = new Decimal(300)
         if (hasUpgrade('q', 11)) box = box.times(2)
         return {box,
-        boxcap: tmp.p.effect.box/player.p.points
+        boxcap: tmp.p.effect.box/player.p.points,
+        boxcap2: tmp.p.effect.box/player.q.points
         }
     },
     effectDescription() { // Optional text to describe the effects
@@ -128,7 +129,7 @@ addLayer("q", {
     exponent: 1, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
-        if (player.p.points.gte(tmp.p.effect.box)) mult =mult.times(tmp.p.effect.boxcap)
+        if (player.q.points.gte(tmp.p.effect.box)) mult =mult.times(tmp.p.effect.boxcap2)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
