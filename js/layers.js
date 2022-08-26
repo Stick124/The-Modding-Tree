@@ -16,7 +16,7 @@ addLayer("p", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         if (hasUpgrade('p', 12)) mult = mult.times(2)
-        
+        if (player.p.points.gte(tmp.p.effect.box)) mult =mult.times(tmp.p.effect.boxcap)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -29,7 +29,7 @@ addLayer("p", {
     layerShown(){return true},
     effect() {
         return {box:300,
-        boxcap: tmp.p.effect.box
+        boxcap: tmp.p.effect.box/player.p.points
         }
     },
     effectDescription() { // Optional text to describe the effects
