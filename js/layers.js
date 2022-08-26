@@ -128,6 +128,7 @@ addLayer("q", {
     exponent: 1, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
+        if (player.p.points.gte(tmp.p.effect.box)) mult =mult.times(tmp.p.effect.boxcap)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -146,7 +147,7 @@ addLayer("q", {
             done() { return player.q.points.gte(1) }
         },
         1: {
-            requirementDescription: "100 wavers",
+            requirementDescription: "500 wavers",
             effectDescription: "Some extra word of mouth",
             done() { return player.q.points.gte(500) }
         },
