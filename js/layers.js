@@ -6,7 +6,7 @@ addLayer("f", {
         unlocked: true,
 		points: new Decimal(0), // Starting amount
     }},
-    color: "#4BCCFF",
+    color: "#FBCCFF",
     requires: new Decimal(100
         ), // Can be a function that takes requirement increases into account
     resource: "fimularities", // Name of prestige currency
