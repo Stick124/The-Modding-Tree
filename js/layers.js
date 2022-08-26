@@ -28,7 +28,9 @@ addLayer("p", {
     ],
     layerShown(){return true},
     effect() {
-        return {box:300,
+        box = new Decimal(300)
+        if (hasUpgrade('q', 11)) box = box.times(2)
+        return {box,
         boxcap: tmp.p.effect.box/player.p.points
         }
     },
