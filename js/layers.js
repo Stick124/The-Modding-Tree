@@ -148,7 +148,7 @@ addLayer("q", {
         4: {
             requirementDescription: "100 wavers",
             effectDescription: "Some extra word of mouth",
-            done() { return player.p.points.gte(100) }
+            done() { return player.p.points.gte(500) }
         },
         20: {
             requirementDescription: "123 waffles",
@@ -160,7 +160,14 @@ addLayer("q", {
         11: {
             title: "Leading questions",
             description: "know twice as many people.",
-            cost: new Decimal(1)
+            cost: new Decimal(1),
+            unlocked() {return hasMilestone('q', 0)}
+        },
+        12: {
+            title: "proper Leading",
+            description: "a leader has a few new responsibilities.",
+            cost: new Decimal(1),
+            unlocked() {return hasMilestone('q', 1)}
         }
     }
 })
