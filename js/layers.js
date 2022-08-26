@@ -121,7 +121,8 @@ addLayer("q", {
 		points: new Decimal(0), // Starting amount
     }},
     color: "#4BDCFF",
-    requires: new Decimal(400), // Can be a function that takes requirement increases into account
+    requires: new Decimal(400
+        ), // Can be a function that takes requirement increases into account
     resource: "Wavers", // Name of prestige currency
     baseResource: "signiture", // Name of resource prestige is based on
     baseAmount() {return player.p.points}, // Get the current amount of baseResource
@@ -174,3 +175,36 @@ addLayer("q", {
     }
 })
 
+addLayer("q", {
+    name: "errors", // This is optional, only used in a few places, If absent it just uses the layer id.
+    symbol: "E", // This appears on the layer's node. Default is the id with the first letter capitalized
+    position: 2, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    startData() { return {
+        unlocked: true,
+		points: new Decimal(0), // Starting amount
+    }},
+    color: "#4BDCFF",
+    requires: new Decimal(4000
+        ), // Can be a function that takes requirement increases into account
+    resource: "errors", // Name of prestige currency
+    baseResource: "", // Name of resource prestige is based on
+    baseAmount() {return player.points}, // Get the current amount of baseResource
+    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 1, // Prestige currency exponent
+    gainMult() { // Calculate the multiplier for main currency from bonuses
+        mult = new Decimal(1)
+        if (player.q.points.gte(tmp.p.effect.box)) mult =mult.div(tmp.p.effect.boxcap2)
+        if (player.q.points.gte(tmp.p.effect.box)) mult =mult.div(tmp.p.effect.boxcap)
+        return mult
+    },
+    gainExp() { // Calculate the exponent on main currency from bonuses
+        return new Decimal(1)
+    },
+    row: 0, // Row the layer is in on the tree (0 is the first row)
+    hotkeys: [
+        {key: "q", description: "q:", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+    layerShown(){return player[this.layer].unlocked && hasUpgrade("q", 12)},
+    
+    
+})
