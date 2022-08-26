@@ -120,7 +120,7 @@ addLayer("q", {
 		points: new Decimal(0), // Starting amount
     }},
     color: "#4BDCFF",
-    requires: new Decimal(400), // Can be a function that takes requirement increases into account
+    requires: new Decimal(300), // Can be a function that takes requirement increases into account
     resource: "Wavers", // Name of prestige currency
     baseResource: "signiture", // Name of resource prestige is based on
     baseAmount() {return player.p.points}, // Get the current amount of baseResource
