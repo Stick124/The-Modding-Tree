@@ -143,7 +143,7 @@ addLayer("q", {
         3: {
             requirementDescription: "Greatings card",
             effectDescription: "anything can be useful, when everything else was destroyed",
-            done() { return player.p.points.gte(1) }
+            done() { return player.q.points.gte(1) }
         },
         4: {
             requirementDescription: "100 wavers",
