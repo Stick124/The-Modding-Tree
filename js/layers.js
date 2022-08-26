@@ -8,7 +8,7 @@ addLayer("p", {
     }},
     color: "#4BDC13",
     requires: new Decimal(1), // Can be a function that takes requirement increases into account
-    resource: "Signature", // Name of prestige currency
+    resource: "Signatures", // Name of prestige currency
     baseResource: "writing", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
