@@ -29,7 +29,7 @@ addLayer("p", {
     layerShown(){return true},
     effect() {
         return {box:300,
-        boxcap: 300
+        boxcap: tmp.p.effect.box
         }
     },
     effectDescription() { // Optional text to describe the effects
