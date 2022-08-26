@@ -28,13 +28,13 @@ addLayer("p", {
     ],
     layerShown(){return true},
     effect() {
-        return {box:300
-        
+        return {box:300,
+        boxcap: box
         }
     },
     effectDescription() { // Optional text to describe the effects
         eff = this.effect();
-        return "which are boosting red pikmin by "+format(eff.box)
+        return "You've met "+format(eff.box)
     },
     milestones: {
         0: {
@@ -65,12 +65,12 @@ addLayer("p", {
         },
         12: {
             title: "scribbling",
-            description: "It was hard to notice how fast you're adapting. <br> doubles Signature gain",
+            description: "aka faster writing. <br> doubles Signature gain",
             cost: new Decimal(20),
             unlocked() {return hasMilestone('p', 1)}
         },
         13: {
-            title: "escape dangerous places.",
+            title: "plans to escape the wreckage.",
             description: "unlock a new layer.",
             cost: new Decimal(250),
             unlocked() {return hasMilestone('p', 1)}
