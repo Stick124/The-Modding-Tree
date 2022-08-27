@@ -6,6 +6,7 @@ addLayer("f", {
         unlocked: true,
 		points: new Decimal(0), // Starting amount
         canReset() {false},
+        resetsNothing:true,
     }},
     color: "#FBCCFF",
     requires: new Decimal(100
@@ -29,6 +30,8 @@ addLayer("f", {
     layerShown(){return player[this.layer].unlocked && hasUpgrade("q", 12)},
     
     canReset() {false},
+
+    onPrestige(gain) {player.f.points(-1)},
 
     passiveGeneration() {
         if (hasUpgrade('q', 12))
