@@ -245,7 +245,7 @@ addLayer("e", {
          return .1}
 })
 
-addLayer("C", {
+addLayer("c", {
     name: "companion", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "C", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 1, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
@@ -290,17 +290,17 @@ addLayer("C", {
         0: {
             requirementDescription: "your own name",
             effectDescription: "anything can be useful, when everything else was destroyed",
-            done() { return player.p.points.gte(1) }
+            done() { return player.c.points.gte(1) }
         },
         1: {
             requirementDescription: "100 Signatures",
             effectDescription: "Some extra word of mouth",
-            done() { return player.p.points.gte(100) }
+            done() { return player.c.points.gte(10) }
         },
         10: {
             requirementDescription: "123 waffles",
             effectDescription: "blah",
-            done() { return player.p.points.gte(100000) }
+            done() { return player.c.points.gte(100) }
         }
     },
     upgrades: {
@@ -308,48 +308,7 @@ addLayer("C", {
             title: "trade your written names for a new signature",
             description: "unlock point gain.",
             cost: new Decimal(0),
-            unlocked() {return hasMilestone('p', 0)},
-            effect() {
-                return ((player.p.points-player.points)/(1+player.points))+.05
-            }
-        },
-        12: {
-            title: "scribbling",
-            description: "aka faster writing. <br> doubles Signature gain",
-            cost: new Decimal(20),
-            unlocked() {return hasMilestone('p', 1)}
-        },
-        13: {
-            title: "plans to escape the wreckage.",
-            description: "unlock a new layer.",
-            cost: new Decimal(250),
-            unlocked() {return hasMilestone('p', 1)}
-        },
-        14: {
-            title: "Send your red pikmin to the fire zone.",
-            description: "This is different, but still boosts your pellet gain.",
-            cost: new Decimal(9),
-            unlocked() {return hasMilestone('p', 10)},
-            effect() {
-                return player[this.layer].points.add(4).pow(0.1)
-            },
-            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }
-        },
-        15: {
-            title: "Send your red pikmin to the pellets actual location.",
-            description: "This will triple your pellet gain... and maybe your IQ.",
-            cost: new Decimal(19),
-            unlocked() {return hasMilestone('p', 10)}
-        },
-        16: {
-            title: "Send yourself to the fire zone.",
-            description: "This is worth trying, but it's slightly more worrisome.",
-            cost: new Decimal(200),
-            unlocked() {return hasMilestone('p', 10)},
-            effect() {
-                return player[this.layer].points.add(4).pow(0.1)
-            },
-            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x*2" }
+            unlocked() {return hasMilestone('p', 0)}
         }
     }
 })
