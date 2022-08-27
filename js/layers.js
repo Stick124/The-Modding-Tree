@@ -191,11 +191,6 @@ addLayer("q", {
             requirementDescription: "500 wavers",
             effectDescription: "Some extra word of mouth",
             done() { return player.q.points.gte(500) }
-        },
-        10: {
-            requirementDescription: "123 waffles",
-            effectDescription: "blah",
-            done() { return player.q.points.gte(100000) }
         }
     },
     upgrades: {
@@ -356,8 +351,5 @@ addLayer("C", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x*2" }
         }
-    },
-    passiveGeneration() {
-        if (hasUpgrade('p', 11))
-         return .1}
+    }
 })
