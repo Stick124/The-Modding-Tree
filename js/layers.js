@@ -254,12 +254,12 @@ addLayer("c", {
 		points: new Decimal(0), // Starting amount
     }},
     color: "#4BDC13",
-    requires: new Decimal(1), // Can be a function that takes requirement increases into account
+    requires: new Decimal(25), // Can be a function that takes requirement increases into account
     resource: "companions", // Name of prestige currency
     baseResource: "fimularities", // Name of resource prestige is based on
     baseAmount() {return player.f.points}, // Get the current amount of baseResource
-    type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 0.5, // Prestige currency exponent
+    type: "static", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
+    exponent: 3, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         if (hasUpgrade('p', 12)) mult = mult.times(2)
