@@ -263,7 +263,6 @@ addLayer("c", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         if (hasUpgrade('p', 12)) mult = mult.times(2)
-        if (player.p.points.gte(tmp.p.effect.box)) mult =mult.times(tmp.p.effect.boxcap)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -307,7 +306,7 @@ addLayer("c", {
         11: {
             title: "trade your written names for a new signature",
             description: "unlock point gain.",
-            cost: new Decimal(0),
+            cost: new Decimal(1),
             unlocked() {return hasMilestone('p', 0)}
         }
     }
