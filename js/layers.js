@@ -253,15 +253,22 @@ addLayer("e", {
     passiveGeneration() {
         if (hasUpgrade('q', 12))
          return .1},
-
     buyables: {
         11: {
-            cost(x) { return new Decimal(1).mul(1) },
-            display() { return "Patch errors" },
+            cost(x) {return new Decimal(1).mul(Decimal.pow(2, x))},
+            display() { return "cost: " + format(tmp[this.layer].buyables[this.id].cost) + "<br>level: " +getBuyableAmount(this.layer, this.id) + "<br><br>effect:" + format(buyableEffect(this.layer, this.id)) },
             canAfford() { return player[this.layer].points.gte(this.cost()) },
             buy() {
-                player[this.layer].points = player[this.layer].points.sub(this.cost())
-                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+                player[this.layer].points = player[this.layer].points.sub(this.cost()),           
+                setBuyableAmount(this.layer, this.id, 
+                getBuyableAmount(this.layer, this.id).add(1))
+            },
+            effect(x) {
+
+                let eff = x
+                
+                return eff
+                
             }
         }
     }
