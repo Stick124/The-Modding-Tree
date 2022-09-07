@@ -252,7 +252,19 @@ addLayer("e", {
     
     passiveGeneration() {
         if (hasUpgrade('q', 12))
-         return .1}
+         return .1},
+
+    buyables: {
+        11: {
+            cost(x) { return new Decimal(1).mul(x) },
+            display() { return "Blah" },
+            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            buy() {
+                player[this.layer].points = player[this.layer].points.sub(this.cost())
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            }
+        }
+    }
 })
 
 addLayer("c", {
@@ -284,12 +296,7 @@ addLayer("c", {
     ],
     layerShown(){return true},
     effect() {
-        box = new Decimal(300)
-        if (hasUpgrade('q', 11)) box = box.times(2)
-        return {box,
-        boxcap: tmp.p.effect.box/player.p.points,
-        boxcap2: tmp.p.effect.box/player.q.points
-        }
+        
     },
     effectDescription() { // Optional text to describe the effects
         eff = this.effect();
@@ -310,14 +317,6 @@ addLayer("c", {
             requirementDescription: "123 waffles",
             effectDescription: "blah",
             done() { return player.c.points.gte(100) }
-        }
-    },
-    upgrades: {
-        11: {
-            title: "trade your written names for a new signature",
-            description: "unlock point gain.",
-            cost: new Decimal(1),
-            unlocked() {return hasMilestone('p', 0)}
         }
     }
 })
