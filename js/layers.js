@@ -185,9 +185,9 @@ addLayer("q", {
     effect() {
         blanks = new Decimal(1)
         if (hasUpgrade('q', 11)) blanks = blanks.times(1)
-        return {box,
-        blankcap: tmp.q.effect.blanks/player.q.points*player.e.points,
-        blankcap2: tmp.q.effect.blanks/(player.e.points*2)*player.q.points
+        return {blanks,
+        blankcap: tmp.q.effect.blanks/(player.q.points+1)*(player.e.points+1),
+        blankcap2: tmp.q.effect.blanks/(player.e.points*2+1)*(player.q.points+1)
         }
     },
 
