@@ -259,7 +259,7 @@ addLayer("e", {
             display() { return "cost: " + format(tmp[this.layer].buyables[this.id].cost) + "<br>level: " +getBuyableAmount(this.layer, this.id) + "<br><br>effect:" + format(buyableEffect(this.layer, this.id)) },
             canAfford() { return player[this.layer].points.gte(this.cost()) },
             buy() {
-                player[this.layer].points = player[this.layer].points.sub(this.cost()),           
+                player.q.points = player.q.points.sub(this.cost()),           
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
             },
             effect(x) {
