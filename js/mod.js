@@ -51,6 +51,8 @@ function canGenPoints(){
 
 		if (hasUpgrade('p', 11)) gain = gain.times(upgradeEffect("p", 11))
 
+		if (player.q.points.gte(tmp.q.effect.blanks)) gain =gain.times(tmp.q.effect.blankcap2)
+
 		return gain
 	
 	}
