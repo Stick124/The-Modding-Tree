@@ -225,7 +225,7 @@ addLayer("e", {
     position: 3, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
         unlocked: true,
-		points: new Decimal(1), // Starting amount
+		points: new Decimal(0), // Starting amount
     }},
     color: "#4BDCAF",
     requires: new Decimal(4000
