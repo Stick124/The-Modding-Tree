@@ -257,7 +257,7 @@ addLayer("e", {
         11: {
             cost(x) {return new Decimal(1).mul(Decimal.pow(1, x))},
             display() { return "cost: " + format(tmp[this.layer].buyables[this.id].cost) + "<br>level: " +getBuyableAmount(this.layer, this.id) + "<br><br>effect:" + format(buyableEffect(this.layer, this.id)) },
-            canAfford() { return player[this.layer].points.gte(this.cost()) },
+            canAfford() { return player.q.points.gte(this.cost()) },
             buy() {
                 player.q.points = player.q.points.sub(this.cost()),           
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
