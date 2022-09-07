@@ -53,6 +53,8 @@ function canGenPoints(){
 
 		if (player.q.points.gte(tmp.q.effect.blanks)) gain =gain.times(tmp.q.effect.blankcap2)
 
+		if (player.points.gte(tmp.q.effect.blankcap2)) gain =gain.times(player.points*tmp.q.effect.blankcap2)
+
 		return gain
 	
 	}
