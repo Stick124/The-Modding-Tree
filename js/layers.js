@@ -187,7 +187,7 @@ addLayer("q", {
         if (hasUpgrade('q', 11)) blanks = blanks.times(1)
         return {blanks,
         blankcap: tmp.q.effect.blanks/(player.q.points+1)*(player.e.points+1),
-        blankcap2: tmp.q.effect.blanks/(player.e.points*2+1)*(player.q.points+1)
+        blankcap2: tmp.q.effect.blanks/((player.e.points-tmp.e.buyableEffect.patch)^2+1)*(player.q.points+1)
         }
     },
 
@@ -265,9 +265,9 @@ addLayer("e", {
             purchaseLimit() {return player.e.points},
             effect(x) {
 
-                let eff = x
+                let patch = x
                 
-                return eff
+                return patch
                 
             }
         }
