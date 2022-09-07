@@ -234,7 +234,7 @@ addLayer("e", {
     baseResource: "", // Name of resource prestige is based on
     baseAmount() {return player.points}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 1, // Prestige currency exponent
+    exponent: .3, // Prestige currency exponent
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         if (player.q.points.gte(tmp.p.effect.box)) mult =mult.div(tmp.p.effect.boxcap2)
@@ -256,8 +256,8 @@ addLayer("e", {
 
     buyables: {
         11: {
-            cost(x) { return new Decimal(1).mul(x) },
-            display() { return "Blah" },
+            cost(x) { return new Decimal(1).mul(1) },
+            display() { return "Patch errors" },
             canAfford() { return player[this.layer].points.gte(this.cost()) },
             buy() {
                 player[this.layer].points = player[this.layer].points.sub(this.cost())
