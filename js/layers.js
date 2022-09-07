@@ -56,6 +56,7 @@ addLayer("p", {
         mult = new Decimal(1)
         if (hasUpgrade('p', 12)) mult = mult.times(2)
         if (player.p.points.gte(tmp.p.effect.box)) mult =mult.times(tmp.p.effect.boxcap)
+        if (player.q.points.gte(tmp.q.effect.blanks)) mult =mult.times(tmp.q.effect.blankcap)
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -181,6 +182,15 @@ addLayer("q", {
     ],
     layerShown(){return player[this.layer].unlocked && hasUpgrade("p", 13)},
     
+    effect() {
+        blanks = new Decimal(1)
+        if (hasUpgrade('q', 11)) blanks = blanks.times(1)
+        return {box,
+        blankcap: tmp.q.effect.blanks/player.q.points*player.e.points,
+        blankcap2: tmp.q.effect.blanks/(player.e.points*2)*player.q.points
+        }
+    },
+
     milestones: {
         0: {
             requirementDescription: "Greatings card",
