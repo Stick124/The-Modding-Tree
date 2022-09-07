@@ -262,7 +262,7 @@ addLayer("e", {
                 player.q.points = player.q.points.sub(this.cost()),           
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
             },
-            purchaseLimit: player.e.points,
+            purchaseLimit() {return player.e.points},
             effect(x) {
 
                 let eff = x
