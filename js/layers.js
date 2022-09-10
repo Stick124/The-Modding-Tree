@@ -91,8 +91,8 @@ addLayer("p", {
             done() { return player.p.points.gte(100) }
         },
         10: {
-            requirementDescription: "123 waffles",
-            effectDescription: "blah",
+            requirementDescription: "100 thousand signatures ",
+            effectDescription: "maybe a few too many",
             done() { return player.p.points.gte(100000) }
         }
     },
@@ -147,9 +147,12 @@ addLayer("p", {
     },
     passiveGeneration() {
         if (hasUpgrade('p', 11))
-         return .1}
+            return .1
+        if (hasMilestone('p', 10))
+            return (player.p.points-100000)/-100}
+        
 })
-//fyi works from another project, this is not stolen or reskin, nor will it be
+//fyi includes works from another project, this is not stolen or reskin, nor will it be
 
 
 addLayer("q", {
@@ -198,9 +201,9 @@ addLayer("q", {
             done() { return player.q.points.gte(1) }
         },
         1: {
-            requirementDescription: "500 wavers",
+            requirementDescription: "50 wavers",
             effectDescription: "Some extra word of mouth",
-            done() { return player.q.points.gte(500) }
+            done() { return player.q.points.gte(50) }
         }
     },
     upgrades: {
@@ -213,7 +216,7 @@ addLayer("q", {
         12: {
             title: "proper Leading",
             description: "a leader has a few new responsibilities.",
-            cost: new Decimal(500),
+            cost: new Decimal(50),
             unlocked() {return hasMilestone('q', 1)}
         }
     }
