@@ -269,8 +269,9 @@ addLayer("e", {
                 let patch = x
                 
                 return patch
-                
+                if (canReset(this.id)) doReset(this.id)
             }
+            
         }
     }
 })
