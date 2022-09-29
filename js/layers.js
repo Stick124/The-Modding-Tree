@@ -263,7 +263,7 @@ addLayer("e", {
                 player.q.points = player.q.points.sub(this.cost()),           
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
             },
-            buyMax() {
+            buyMax(x) {
                 player.q.points = player.q.points.sub(this.cost()),           
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(x))
             },
