@@ -263,6 +263,10 @@ addLayer("e", {
                 player.q.points = player.q.points.sub(this.cost()),           
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
             },
+            buyMax() {
+                player.q.points = player.q.points.sub(this.cost()),           
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(x))
+            },
             purchaseLimit() {return player.e.points-5-player.e.points/100},
             effect(x) {
 
