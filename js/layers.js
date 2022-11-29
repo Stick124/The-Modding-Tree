@@ -325,5 +325,23 @@ addLayer("c", {
             effectDescription: "did you just start a cult?",
             done() { return player.c.points.gte(100) }
         }
+    },
+    buyables: {
+        11: {
+            cost(x) {return new Decimal(1).mul(Decimal.pow(1, x))},
+            display() { return "cost: " + format(tmp[this.layer].buyables[this.id].cost) + "<br>level: " +getBuyableAmount(this.layer, this.id) + "<br><br>effect:" + format(buyableEffect(this.layer, this.id)) },
+            canAfford() { return player.q.points.gte(this.cost()) },
+            buy() {           
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
+            purchaseLimit() {return player.e.points-5-player.e.points/100},
+            effect(x) {
+
+                let patch = x
+                
+                return patch
+            }
+            
+        }
     }
 })
