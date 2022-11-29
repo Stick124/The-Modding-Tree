@@ -354,7 +354,7 @@ addLayer("c", {
             buy() {     
                 
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(0))
-                return tmp[this.layer].buyables[12].sellAll
+                return tmp.c.buyables.sellAll(12)
             },
             purchaseLimit() {return player.c.points},
             effect(x) {
