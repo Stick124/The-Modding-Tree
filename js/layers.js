@@ -354,7 +354,7 @@ addLayer("c", {
             buy() {     
                 
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(0))
-                return tmp.buyableEffect(c,12).patch =false
+                return
             },
             purchaseLimit() {return player.c.points},
             effect(x) {
@@ -380,9 +380,9 @@ addLayer("c", {
             effect(x) {
 
                 let patch = true
-                if (patch==false) {
+                
                     this.sellAll
-                }
+                
                 return patch
             }
             
