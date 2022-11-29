@@ -269,9 +269,6 @@ addLayer("e", {
                 let patch = x
                 
                 return patch
-                
-                player.q.points = player.q.points.sub(this.cost()),
-                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
             }
             
         }
