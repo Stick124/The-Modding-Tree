@@ -373,9 +373,11 @@ addLayer("c", {
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
             },
             sellAll() {
-                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(-1))
+                while (getBuyableAmount(this.layer, this.id)>0) {
+                    setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(-1))
+                }
             },
-            canSellAll() {return false},
+            canSellAll() {return true},
             purchaseLimit() {return player.c.points},
             effect(x) {
 
