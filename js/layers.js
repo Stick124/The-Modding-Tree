@@ -40,7 +40,7 @@ addLayer("f", {
         11: {
             title: "trade your written names for a new signature",
             description: "unlock point gain.",
-            cost: new Decimal(0),
+            cost: new Decimal(1000),
             unlocked() {return hasMilestone('p', 0)},
             effect() {
                 return 1
@@ -267,6 +267,7 @@ addLayer("e", {
     buyables: {
         11: {
             cost(x) {return new Decimal(1).mul(Decimal.pow(1, x))},
+            name:"extend patch",
             display() { return "cost: " + format(tmp[this.layer].buyables[this.id].cost) + "<br>level: " +getBuyableAmount(this.layer, this.id) + "<br><br>effect:" + format(buyableEffect(this.layer, this.id)) },
             canAfford() { return player.q.points.gte(this.cost()) },
             buy() {
@@ -339,6 +340,7 @@ addLayer("c", {
     buyables: {
         11: {
             cost(x) {return new Decimal(1).mul(Decimal.pow(1, x))},
+            name:"scavergers",
             display() { return "cost: " + format(tmp[this.layer].buyables[this.id].cost) + "<br>level: " +getBuyableAmount(this.layer, this.id) + "<br><br>effect:" + format(buyableEffect(this.layer, this.id)) },
             canAfford() { return player.c.points.gte(this.cost()) },
             buy() {           
@@ -357,7 +359,7 @@ addLayer("c", {
     effect() {
         salvage = new Decimal(1)
         salvage = salvage.add(.1*buyableEffect('c', 11))
-        if (buyableEffect('c', 11)>1) salvage = salvage.pow(1 + buyableEffect('c', 11))
+        if (buyableEffect('c', 11)>1) salvage = salvage.pow(buyableEffect('c', 11))
         return {salvage
         }
     }
