@@ -314,18 +314,18 @@ addLayer("c", {
     },
     milestones: {
         0: {
-            requirementDescription: "your own name",
-            effectDescription: "anything can be useful, when everything else was destroyed",
+            requirementDescription: "a 'friend'",
+            effectDescription: "some trust built over time",
             done() { return player.c.points.gte(1) }
         },
         1: {
-            requirementDescription: "100 Signatures",
-            effectDescription: "Some extra word of mouth",
+            requirementDescription: "10 friends",
+            effectDescription: "now people really trust you... for some reason",
             done() { return player.c.points.gte(10) }
         },
         10: {
-            requirementDescription: "123 waffles",
-            effectDescription: "blah",
+            requirementDescription: "100 companions",
+            effectDescription: "did you just start a cult?",
             done() { return player.c.points.gte(100) }
         }
     }
