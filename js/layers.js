@@ -35,7 +35,17 @@ addLayer("f", {
 
     passiveGeneration() {
         if (hasUpgrade('q', 12))
-         return .1}
+         return .1},
+         upgrades: {
+            11: {
+                title: "trade your written names for a new signature",
+                description: "unlock point gain.",
+                cost: new Decimal(0),
+                unlocked() {return hasMilestone('p', 0)},
+                effect() {
+                    return 1
+                }
+            }}
 })
 addLayer("p", {
     name: "Trade for signature", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -347,7 +357,7 @@ addLayer("c", {
     effect() {
         salvage = new Decimal(1)
         salvage = salvage.add(.1*buyableEffect('e', 11))
-        if (hasUpgrade('q', 11)) salvage = salvage.pow(1 + buyableEffect('e', 11))
+        if (hasUpgrade('f', 11)) salvage = salvage.pow(1 + buyableEffect('e', 11))
         return {salvage
         }
     }
