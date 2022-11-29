@@ -343,5 +343,11 @@ addLayer("c", {
             }
             
         }
+    },
+    effect() {
+        salvage = new Decimal(1.1)
+        if (hasUpgrade('q', 11)) salvage = salvage.pow(buyableEffect('e', 11))
+        return {salvage
+        }
     }
 })
