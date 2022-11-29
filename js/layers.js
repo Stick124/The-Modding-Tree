@@ -280,8 +280,10 @@ addLayer("e", {
                 let patch = x
                 
                 return patch
-            }
-            
+            },
+            passiveGeneration() {
+                if (hasUpgrade('f', 11))
+                 return 1}
         }
     }
 })
