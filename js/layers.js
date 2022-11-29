@@ -197,12 +197,12 @@ addLayer("q", {
     milestones: {
         0: {
             requirementDescription: "Greatings card",
-            effectDescription: "anything can be useful, when everything else was destroyed",
+            effectDescription: "knowing more can get you farther",
             done() { return player.q.points.gte(1) }
         },
         1: {
             requirementDescription: "50 wavers",
-            effectDescription: "Some extra word of mouth",
+            effectDescription: "they now speak for you",
             done() { return player.q.points.gte(50) }
         }
     },
