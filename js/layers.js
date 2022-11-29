@@ -275,10 +275,11 @@ addLayer("e", {
                 this.buymax
             },
             buymax() {
-                while (this.canAfford)
-                while (this.purchaseLimit) 
-                (this.buy)
-                
+                if (player.q.points.gte(this.cost())) {
+                    if (player.e.points-5-player.e.points/100>getBuyableAmount(this.layer, this.id)) {
+                        this.buy
+                    }
+                }
             },
             purchaseLimit() {return player.e.points-5-player.e.points/100},
             effect(x) {
