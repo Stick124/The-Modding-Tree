@@ -277,7 +277,7 @@ addLayer("e", {
             effect(x) {
 
                 let patch = x
-                this.buy()
+                if (this.canAfford==true) this.buy()
                 return patch
             },
         }
