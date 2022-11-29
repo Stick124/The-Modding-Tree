@@ -350,7 +350,7 @@ addLayer("c", {
         11: {
             cost(x) {return new Decimal(1).mul(Decimal.pow(1, x))},
             title() {return "Scavengers"},
-            display() { return "Scavengers" + "<br>cost: " + format(tmp[this.layer].buyables[this.id].cost) + "<br>level: " +getBuyableAmount(this.layer, this.id) + "<br>effect:" + format(buyableEffect(this.layer, this.id)) },
+            display() { return "cost: " + format(tmp[this.layer].buyables[this.id].cost) + "<br>level: " +getBuyableAmount(this.layer, this.id) + "<br>effect:" + format(buyableEffect(this.layer, this.id)) },
             canAfford() { return player.c.points.gte(this.cost()) },
             buy() {           
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
