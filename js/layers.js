@@ -147,7 +147,7 @@ addLayer("p", {
     },
     passiveGeneration() {
         if (hasUpgrade('p', 11))
-            return .1
+            return (.1*(player[this.layer].points.pow(0.5)))
         if (hasMilestone('p', 10))
             return (player.p.points-100000)/-100}
         
