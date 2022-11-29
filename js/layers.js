@@ -379,10 +379,7 @@ addLayer("c", {
             purchaseLimit() {return player.c.points},
             effect(x) {
 
-                let patch = true
-                
-                    this.sellAll
-                
+                let patch = x
                 return patch
             }
             
