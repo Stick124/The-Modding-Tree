@@ -366,7 +366,6 @@ addLayer("c", {
                 let patch = x
                 return patch
             }
-            
         }
     },
     effect() {
