@@ -267,7 +267,7 @@ addLayer("e", {
     buyables: {
         11: {
             cost(x) {return new Decimal(1).mul(Decimal.pow(1, x))},
-            name:"extend patch",
+            display:"extend patch",
             display() { return "cost: " + format(tmp[this.layer].buyables[this.id].cost) + "<br>level: " +getBuyableAmount(this.layer, this.id) + "<br><br>effect:" + format(buyableEffect(this.layer, this.id)) },
             canAfford() { return player.q.points.gte(this.cost()) },
             buy() {
