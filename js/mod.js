@@ -57,7 +57,7 @@ function canGenPoints(){
 
 		gain = gain.div(tmp.c.effect.salvage)
 
-		gain = gain.add(tmp.c.effect.salvage.pow(2))
+		gain = gain.add(tmp.c.effect.salvage.pow(.5))
 
 		gain = gain.times(tmp.c.effect.salvage)
 
