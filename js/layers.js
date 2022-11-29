@@ -277,7 +277,6 @@ addLayer("e", {
             effect(x) {
 
                 let patch = x
-                if (player.q.points.gte(this.cost()) && this.purchaseLimit.gte(this.buy.setBuyableAmount)) this.buy()
                 return patch
             },
         }
