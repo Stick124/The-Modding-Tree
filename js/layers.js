@@ -268,7 +268,7 @@ addLayer("e", {
         11: {
             cost(x) {return new Decimal(1).mul(Decimal.pow(1, x))},
             display() { return "extend patch" +"<br>cost: " + format(tmp[this.layer].buyables[this.id].cost) + "<br>level: " +getBuyableAmount(this.layer, this.id) + "<br>effect:" + format(buyableEffect(this.layer, this.id)) },
-            canAfford() { return player.q.points.gte(this.cost()), tmp.e.buyables(11).buy() },
+            canAfford() { return player.q.points.gte(this.cost()), tmp.buyables(e,11).buy() },
             buy() {
                 player.q.points = player.q.points.sub(this.cost()),           
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
