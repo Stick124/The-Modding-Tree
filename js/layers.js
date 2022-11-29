@@ -353,7 +353,7 @@ addLayer("c", {
             canAfford() { return player.c.points.gte(this.cost()) },
             buy() {     
                 tmp.c.buyables(12) = tmp.c.buyables(12).sub(tmp.c.buyables(12))
-                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(0))
             },
             purchaseLimit() {return player.c.points},
             effect(x) {
