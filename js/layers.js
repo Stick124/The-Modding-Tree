@@ -352,7 +352,7 @@ addLayer("c", {
             display() { return "Scavengers" + "<br>cost: " + format(tmp[this.layer].buyables[this.id].cost) + "<br>level: " +getBuyableAmount(this.layer, this.id) + "<br>effect:" + format(buyableEffect(this.layer, this.id)) },
             canAfford() { return player.c.points.gte(this.cost()) },
             buy() {     
-                tmp.c.buyables(12) = tmp.c.buyables(12).sub(tmp.c.buyables(12))
+                tmp.buyables(c,12) = tmp.buyables(c,12).sub(tmp.buyables(c,12))
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(0))
             },
             purchaseLimit() {return player.c.points},
