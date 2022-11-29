@@ -351,6 +351,23 @@ addLayer("c", {
             cost(x) {return new Decimal(1).mul(Decimal.pow(1, x))},
             display() { return "Scavengers" + "<br>cost: " + format(tmp[this.layer].buyables[this.id].cost) + "<br>level: " +getBuyableAmount(this.layer, this.id) + "<br>effect:" + format(buyableEffect(this.layer, this.id)) },
             canAfford() { return player.c.points.gte(this.cost()) },
+            buy() {     
+                tmp.c.buyables(12) = tmp.c.buyables(12).sub(tmp.c.buyables(12))
+                setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            },
+            purchaseLimit() {return player.c.points},
+            effect(x) {
+
+                let patch = x
+                
+                return patch
+            }
+            
+        },
+        12: {
+            cost(x) {return new Decimal(1).mul(Decimal.pow(1, x))},
+            display() { return "Scavengers" + "<br>cost: " + format(tmp[this.layer].buyables[this.id].cost) + "<br>level: " +getBuyableAmount(this.layer, this.id) + "<br>effect:" + format(buyableEffect(this.layer, this.id)) },
+            canAfford() { return player.c.points.gte(this.cost()) },
             buy() {           
                 setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
             },
@@ -366,8 +383,8 @@ addLayer("c", {
     },
     effect() {
         salvage = new Decimal(1)
-        salvage = salvage.add(.1*buyableEffect('c', 11))
-        if (buyableEffect('c', 11)>1) salvage = salvage.pow(buyableEffect('c', 11))
+        salvage = salvage.add(.1*buyableEffect('c', 12))
+        if (buyableEffect('c', 12)>=1) salvage = salvage.pow(buyableEffect('c', 12))
         return {salvage
         }
     }
