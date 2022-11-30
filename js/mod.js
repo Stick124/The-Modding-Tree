@@ -53,7 +53,7 @@ function canGenPoints(){
 
 		gain = gain.div(tmp.c.effect.salvage+1)
 
-		gain = gain.add(tmp.c.effect.salvage.pow(.15))
+		gain = gain.add(tmp.c.effect.salvage.pow(.15)-1)
 
 		if (player.q.points.gte(tmp.q.effect.blanks)) gain =gain.times(tmp.q.effect.blankcap2)
 
