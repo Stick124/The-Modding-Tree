@@ -113,7 +113,7 @@ addLayer("p", {
             cost: new Decimal(0),
             unlocked() {return hasMilestone('p', 0)},
             effect() {
-                return ((player.p.points*(1+tmp.q.effect.blankcap2)-player.points)/(1+player.points.pow(2)))+.05
+                return ((player.p.points*(1+tmp.q.effect.blankcap2)-player.points)/(1+player.points.times(2)))+.05
             }
         },
         12: {
