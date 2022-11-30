@@ -51,7 +51,7 @@ function canGenPoints(){
 
 		if (hasUpgrade('p', 11)) gain = gain.times(upgradeEffect("p", 11))
 
-		gain = gain.div(tmp.c.effect.salvage)
+		gain = gain.div(tmp.c.effect.salvage+1)
 
 		gain = gain.add(tmp.c.effect.salvage.pow(.15))
 
