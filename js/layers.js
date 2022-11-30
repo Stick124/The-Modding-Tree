@@ -372,7 +372,7 @@ addLayer("c", {
     effect() {
         salvage = new Decimal(1)
         salvage = salvage.add(.1*buyableEffect('c', 11))
-        if (buyableEffect('c', 11)>=1) salvage = salvage.pow(buyableEffect('c', 11).div(10))
+        if (buyableEffect('c', 11)>=1) salvage = salvage.pow(1+buyableEffect('c', 11).div(10))
         return {salvage
         }
     }
