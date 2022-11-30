@@ -113,7 +113,7 @@ addLayer("p", {
             cost: new Decimal(0),
             unlocked() {return hasMilestone('p', 0)},
             effect() {
-                return ((player.p.points*(1+tmp.q.effect.blankcap2)-player.points)/(1+player.points))+.05
+                return ((player.p.points*(1+tmp.q.effect.blankcap2)-player.points)/(1+player.points.pow(2)))+.05
             }
         },
         12: {
@@ -157,7 +157,7 @@ addLayer("p", {
     },
     passiveGeneration() {
         if (hasUpgrade('p', 11))
-            return (.1*(player[this.layer].points.pow(0.5)))
+            return (.05*(player[this.layer].points.pow(0.4)))
         if (hasMilestone('p', 10))
             return (player.p.points-100000)/-100}
         
