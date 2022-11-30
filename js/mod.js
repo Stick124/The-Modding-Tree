@@ -47,7 +47,7 @@ function canGenPoints(){
 
 		let gain = new Decimal(0)
 
-		if (hasUpgrade('p', 11)) gain = new Decimal(1)
+		if (hasUpgrade('p', 11)) gain = new Decimal(.5)
 
 		if (hasUpgrade('p', 11)) gain = gain.times(upgradeEffect("p", 11))
 
